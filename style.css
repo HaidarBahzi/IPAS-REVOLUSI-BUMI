@@ -1,0 +1,188 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url(Image/background.gif);
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: Kusanagi;
+  src: url(Font/Kusanagi.woff);
+}
+
+section {
+  overflow-y: hidden;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Javascript class */
+
+.hidden {
+  opacity: 0;
+  transition: 0.5s all;
+}
+
+.hiddenSlide {
+  opacity: 0;
+  transform: translateX(-100%);
+  filter: blur(5px);
+  transition: 0.5s all;
+}
+
+.show {
+  opacity: 1;
+}
+
+.showSlide {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+/* Loading */
+
+#Loading {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background: url(Image/background.gif);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5vh;
+}
+
+.load-dot {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  animation: anim4 1s infinite;
+  animation-delay: calc(var(--urut) * 150ms);
+}
+
+@keyframes anim4 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Intro */
+
+#Home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5vh;
+  color: white;
+}
+
+.intro-slide {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  font-size: 50px;
+  font-family: monospace;
+  animation: anim1 4.28s 9 ease;
+}
+
+.intro {
+  font-family: Kusanagi;
+  font-size: 50px;
+  display: none;
+}
+
+.intro-btn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 200px;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 25px;
+  color: black;
+  border: 2.75px solid white;
+  background: linear-gradient(to right, transparent 50%, white 50%);
+  background-size: 200% 100%;
+  text-decoration: none;
+  background-position: right bottom;
+  transition: 0.25s all;
+}
+
+.intro-btn:hover {
+  background-position: bottom left;
+  color: white;
+}
+
+@keyframes anim1 {
+  0% {
+    opacity: 0;
+    bottom: 0;
+  }
+
+  50% {
+    opacity: 1;
+    bottom: 50%;
+  }
+
+  100% {
+    opacity: 0;
+    bottom: 100%;
+  }
+}
+
+@keyframes anim2 {
+  from {
+    scale: 1000%;
+  }
+
+  to {
+    scale: 100%;
+  }
+}
+
+@keyframes anim3 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Halaman Pertama */
+.first-sun,
+.first-earth {
+  overflow-y: hidden;
+}
+
+.first-sun img {
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+}
+
+.first-earth img {
+  width: 50px;
+  height: 50px;
+}

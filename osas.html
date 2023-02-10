@@ -1,0 +1,49 @@
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .outer-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 10px solid blue;
+      position: relative;
+      animation: rotate 2s infinite linear;
+    }
+
+    .inner-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: blue;
+      position: absolute;
+      top: -25px;
+      left: 90px;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="outer-circle">
+    <div class="inner-circle"></div>
+  </div>
+</body>
