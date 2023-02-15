@@ -3,6 +3,7 @@ var loadDot = document.querySelectorAll(".load-dot");
 const textLoad = document.getElementById("text-load");
 const loading = document.getElementById("Loading");
 const title = document.title;
+const backgroundMusic = document.getElementById("music");
 document.title = "Loading...";
 
 window.addEventListener("load", function () {
@@ -12,8 +13,8 @@ window.addEventListener("load", function () {
     dot.style.display = "none";
   });
 
-  if (!screen.width >= 800) {
-    startBtn.style.display = "flex";
+  if (window.innerWidth <= 800) {
+    document.write("sorry");
   } else {
     textLoad.style.display = "flex";
 
@@ -25,6 +26,7 @@ window.addEventListener("load", function () {
         IntersectSlideX();
         IntersectSlideY();
         slideImage();
+        IntersectEnd();
       }
     });
   }
@@ -37,11 +39,11 @@ startBtn.addEventListener("click", function () {
   IntersectSlideX();
   IntersectSlideY();
   slideImage();
+  IntersectEnd();
 });
 
 function startIntro() {
   let namaSlide = document.querySelector(".intro-slide");
-  const backgroundMusic = document.getElementById("music");
   const intro = document.querySelector(".intro");
   const btnStart = document.querySelector(".intro-btn");
   const oas = document.querySelectorAll(".element");
@@ -176,3 +178,29 @@ function slideImage() {
     setTimeout(showSlides, 5500); // Ubah gambar setiap 3 detik
   }
 }
+
+function IntersectEnd() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("showEnd");
+        backgroundMusic.src = "Music/background-end.mp3";
+        backgroundMusic.volume = 0.5;
+        backgroundMusic.setAttribute("loop", "loop");
+        backgroundMusic.play();
+      } else {
+        entry.target.classList.remove("showEnd");
+      }
+    });
+  });
+
+  const hiddenElement = document.querySelectorAll(".hiddenEnd");
+  hiddenElement.forEach((el) => observer.observe(el));
+}
+
+const btnEnd = document.getElementById("btn-end");
+
+btnEnd.addEventListener("click", function () {
+  btnEnd.style.display = "none";
+  document.querySelector(".end").style.display = "flex";
+});
