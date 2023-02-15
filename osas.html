@@ -1,49 +1,75 @@
-<head>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .outer-circle {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 10px solid blue;
-      position: relative;
-      animation: rotate 2s infinite linear;
-    }
-
-    .inner-circle {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: blue;
-      position: absolute;
-      top: -25px;
-      left: 90px;
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
       }
-      to {
-        transform: rotate(360deg);
+
+      .slideshow-container {
+        position: relative;
+        height: 400px;
+        width: 400px;
+        margin: auto;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="outer-circle">
-    <div class="inner-circle"></div>
-  </div>
-</body>
+
+      .slideshow-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .fade {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .fade.active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slideshow-container">
+      <div class="slideshow-image fade">
+        <img src="Image/autumn.png" />
+      </div>
+      <div class="slideshow-image fade">
+        <img src="Image/snowflake.png" />
+      </div>
+      <div class="slideshow-image fade">
+        <img src="Image/spring.png" />
+      </div>
+      <div class="slideshow-image fade">
+        <img src="Image/summer.png" />
+      </div>
+    </div>
+
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slideshow-image");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].classList.remove("active");
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].classList.add("active");
+        setTimeout(showSlides, 3000); // Ubah gambar setiap 3 detik
+      }
+    </script>
+  </body>
+</html>

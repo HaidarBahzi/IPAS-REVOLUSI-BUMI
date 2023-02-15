@@ -20,8 +20,9 @@ body {
 section {
   overflow-y: hidden;
   width: 100%;
+  max-width: 100%;
   height: 100vh;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -30,14 +31,21 @@ section {
 
 .hidden {
   opacity: 0;
-  transition: 0.5s all;
+  transition: 0.75s all;
 }
 
 .hiddenSlide {
   opacity: 0;
   transform: translateX(-100%);
   filter: blur(5px);
-  transition: 0.5s all;
+  transition: 0.75s all;
+}
+
+.hiddenSlideUp {
+  opacity: 0;
+  transform: translateY(-100%);
+  filter: blur(5px);
+  transition: 0.75s all;
 }
 
 .show {
@@ -47,6 +55,12 @@ section {
 .showSlide {
   opacity: 1;
   transform: translateX(0);
+  filter: blur(0);
+}
+
+.showSlideUp {
+  opacity: 1;
+  transform: translateY(0);
   filter: blur(0);
 }
 
@@ -72,13 +86,29 @@ section {
   animation-delay: calc(var(--urut) * 150ms);
 }
 
+#btn-load,
+#text-load {
+  display: none;
+  border: none;
+  background: transparent;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 50px;
+  color: white;
+  animation: anim4 2.5s infinite linear;
+}
+
 @keyframes anim4 {
-  from {
+  0% {
     opacity: 0;
   }
 
-  to {
+  50% {
     opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
@@ -101,7 +131,6 @@ section {
   opacity: 0;
   font-size: 50px;
   font-family: monospace;
-  animation: anim1 4.28s 9 ease;
 }
 
 .intro {
@@ -171,18 +200,252 @@ section {
 }
 
 /* Halaman Pertama */
-.first-sun,
-.first-earth {
-  overflow-y: hidden;
+
+.first-sun {
+  width: 40%;
+  rotate: 180deg;
 }
 
 .first-sun img {
-  width: 750px;
-  height: 750px;
-  border-radius: 50%;
+  height: 115vh;
 }
 
-.first-earth img {
+.first-explain {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vh;
+  width: 100%;
+  color: white;
+}
+
+.first-title {
+  font-size: 35px;
+  font-family: Kusanagi;
+}
+
+.first-explain ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5vh;
+}
+
+.explain {
+  padding-right: 15vh;
+  font-size: 18px;
+  font-family: monospace;
+}
+
+/* Halaman Kedua */
+
+#Second {
+  flex-direction: column;
+  gap: 5vh;
+  color: white;
+}
+
+.second-title {
+  font-family: Kusanagi;
+  font-size: 35px;
+}
+
+.second-example {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10vh;
+}
+
+.second-rotation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-rotation span {
+  font-size: 22px;
+  font-family: monospace;
+}
+
+.second-revolution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.second-revolution span {
+  font-size: 22px;
+  font-family: monospace;
+}
+
+.rev {
+  height: 500px;
+  width: 500px;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.orbit {
+  width: 400px;
+  height: 400px;
+  border: 1px solid white;
+  border-radius: 225px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.earth-rev {
   width: 50px;
   height: 50px;
+  position: absolute;
+  top: 230px;
+  left: 230px;
+  animation: orbit 5s linear infinite;
+}
+
+.sun-rev {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 125px;
+  left: 125px;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translate(195px);
+  }
+  to {
+    transform: rotate(360deg) translate(202px);
+  }
+}
+
+/* Halaman Ketiga */
+
+.third-title {
+  color: white;
+  font-size: 50px;
+  font-family: monospace;
+}
+
+/* Halaman Keempat */
+
+#Fourth {
+  gap: 5vh;
+}
+
+.fourth-semu {
+  display: flex;
+  flex-direction: column;
+  gap: 7vh;
+}
+
+.fourth-line {
+  position: relative;
+  width: 450px;
+}
+
+.fourth-line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 2px solid white;
+}
+
+.special-line {
+  display: flex;
+  gap: 12.5vh;
+}
+
+.special-sun {
+  margin-left: 80px;
+}
+
+.special-sun1 {
+  margin-left: 255px;
+}
+
+.special-sun2 {
+  margin-left: 30px;
+}
+
+.fourth-line img {
+  width: 75px;
+  position: relative;
+  left: 2.5%;
+}
+
+.fourth-placeholder {
+  font-family: monospace;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+.fourth-explain {
+  color: white;
+  width: 55%;
+}
+
+.fourth-explain span {
+  font-size: 50px;
+  font-family: Kusanagi;
+}
+
+.fourth-explain p {
+  font-size: 18px;
+  font-family: monospace;
+}
+
+/* Halaman Kelima */
+
+#Fifth {
+  color: white;
+  gap: 5vh;
+}
+
+.slideshow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 450px;
+  height: 450px;
+}
+
+.slideshow-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade.active {
+  opacity: 1;
+}
+
+.fifth-explain {
+  width: 55%;
+}
+
+.fifth-explain span {
+  font-size: 50px;
+  font-family: Kusanagi;
+}
+
+.fifth-explain p {
+  font-size: 18px;
+  font-family: monospace;
 }

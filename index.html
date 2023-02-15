@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
+    <title>EARTH REVOLUTION</title>
   </head>
   <body>
-    <audio src="Music/music.mp3" id="music" autoplay></audio>
+    <audio src="Music/music.mp3" id="music"></audio>
 
     <div id="Loading">
       <div class="load-dot" style="--urut: 1"></div>
@@ -16,6 +17,8 @@
       <div class="load-dot" style="--urut: 3"></div>
       <div class="load-dot" style="--urut: 4"></div>
       <div class="load-dot" style="--urut: 5"></div>
+      <button id="btn-load">Start</button>
+      <div id="text-load">Press Enter / Space to Start</div>
     </div>
 
     <div id="Home">
@@ -28,32 +31,118 @@
 
     <section id="First" class="element">
       <div class="first-sun">
-        <img src="Image/Sun.png" alt="Gambar Matahari" class="hiddenSlide" />
-      </div>
-      <div class="first-earth">
-        <img src="Image/Earth.png" alt="" />
+        <img src="Image/Sun.png" class="hiddenSlide" alt="Gambar Matahari" />
       </div>
 
       <div class="first-explain">
+        <div class="first-title hiddenSlideUp">Revolusi Bumi</div>
         <ul>
           <li>
-            <div class="explain">Pengertian Revolusi Bumi</div>
+            <div class="explain hiddenSlideUp">
+              Revolusi Bumi adalah proses alam yang melibatkan rotasi bumi sekitar sumbunya sendiri. Bumi memiliki tingkat kemiringan
+              23,5 derajat dan berputar sekitar sumbunnya selama 24 jam.
+            </div>
           </li>
+
           <li>
-            <div class="explain"></div>
+            <div class="explain hiddenSlideUp">
+              Kecepatan bumi ketika melakukan revolusi berkisar 30 km/detik, Sedangkan waktu yang dibutuhkan bumi untuk melakukan
+              revolusi adalah 365 ¼ hari atau dalam kalender masehi selama satu tahun.
+            </div>
           </li>
+
           <li>
-            <div class="explain"></div>
+            <div class="explain hiddenSlideUp">
+              Revolusi bumi dijadikan sebagai acuan untuk membuat kalender masehi. Dalam perhitungan kalender masehi, waktu yang
+              digunakan adalah satu kali putaran revolusi bumi yaitu 365 ¼ hari.
+            </div>
           </li>
         </ul>
       </div>
     </section>
 
-    <section id="Second" class="element"></section>
-    <section id="Third" class="element"></section>
-    <section id="Fourth" class="element"></section>
-    <section id="Fifth" class="element"></section>
+    <section id="Second" class="element">
+      <div class="second-title hiddenSlideUp">ROTATION VS REVOLUTION</div>
+
+      <div class="second-example">
+        <div class="second-rotation hiddenSlide">
+          <img src="Image/Earth.gif" alt="Gambar Bumi" />
+          <span>Bumi yang sedang berotasi</span>
+        </div>
+
+        <div class="second-revolution hiddenSlide">
+          <div class="rev">
+            <div class="orbit"></div>
+            <img src="Image/Earth.png" alt="Gambar Bumi" class="earth-rev" />
+            <img src="Image/Sun.png" alt="Gambar Matahari" class="sun-rev" />
+          </div>
+          <span>Bumi yang sedang berevolusi</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="Third" class="element">
+      <div class="third-title hiddenSlideUp">EFFECT OF EARTH REVOLUTION</div>
+    </section>
+
+    <section id="Fourth" class="element">
+      <div class="fourth-semu hiddenSlide">
+        <div class="fourth-line">
+          <img src="Image/Sun.png" class="special-sun hiddenShort" alt="" />
+        </div>
+
+        <div class="fourth-line special-line">
+          <img src="Image/Sun.png" alt="" />
+          <img src="Image/Sun.png" alt="" />
+          <img src="Image/Sun.png" class="special-sun2" alt="" />
+        </div>
+
+        <div class="fourth-line">
+          <img src="Image/Sun.png" class="special-sun1" alt="" />
+        </div>
+
+        <div class="fourth-placeholder">Gerak Semu Tahunan Matahari</div>
+      </div>
+
+      <div class="fourth-explain hiddenSlide">
+        <span>EFFECT #1</span>
+        <p>
+          Matahari terbit di tempat yang berbeda setiap pagi karena pergeseran titik terbitnya mengikuti garis edar matahari selama
+          satu tahun, dari katulistiwa ke garis balik utara, ke garis balik selatan, lalu kembali ke katulistiwa. Gerak semu ini
+          disebabkan oleh revolusi bumi dengan sumbu rotasi yang miring.
+        </p>
+      </div>
+    </section>
+
+    <section id="Fifth" class="element">
+      <div class="fifth-explain hiddenSlideUp">
+        <span>EFFECT #2</span>
+        <p>
+          Pergantian musim terjadi karena pergeseran garis edar matahari, yang mempengaruhi lamanya siang dan malam. Di daerah tropis,
+          terdapat 2 musim: musim kemarau dan musim penghujan. Di daerah sub tropis, terdapat 4 musim: musim semi, musim hujan, musim
+          panas, dan musim gugur. Di belahan bumi utara dan selatan terdapat 4 musim: musim semi, musim panas, musim gugur, dan musim
+          dingin.
+        </p>
+      </div>
+
+      <div class="slideshow-container hiddenSlide">
+        <div class="slideshow-image fade">
+          <img src="Image/autumn.png" />
+        </div>
+        <div class="slideshow-image fade">
+          <img src="Image/snowflake.png" />
+        </div>
+        <div class="slideshow-image fade">
+          <img src="Image/spring.png" />
+        </div>
+        <div class="slideshow-image fade">
+          <img src="Image/summer.png" />
+        </div>
+      </div>
+    </section>
+
     <section id="Sixth" class="element"></section>
+
     <section id="Seventh" class="element"></section>
   </body>
 </html>
