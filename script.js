@@ -203,4 +203,8 @@ const btnEnd = document.getElementById("btn-end");
 btnEnd.addEventListener("click", function () {
   btnEnd.style.display = "none";
   document.querySelector(".end").style.display = "flex";
+  backgroundMusic.src = "Music/background-end.mp3";
+  backgroundMusic.volume = 0.5;
+  backgroundMusic.setAttribute("loop", "loop");
+  backgroundMusic.play();
 });
